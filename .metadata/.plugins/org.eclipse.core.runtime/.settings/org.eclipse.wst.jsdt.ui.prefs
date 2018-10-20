@@ -1,0 +1,13 @@
+content_assist_autoactivation=true
+content_assist_autoactivation_delay=30
+content_assist_autoactivation_triggers_java=.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jface.textfont=1|Monospace|14.0|0|GTK|1|;
+org.eclipse.wst.jsdt.ui.editor.tab.width=
+org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
+org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
+proposalOrderMigrated=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

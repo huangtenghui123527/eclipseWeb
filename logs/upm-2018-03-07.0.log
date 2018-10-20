@@ -1,0 +1,360 @@
+[ INFO ] [2018-03-07 09:29:06] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 4624 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 09:29:06] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 09:29:11] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 09:29:11] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 09:29:11] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 09:29:22] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 09:29:22] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 09:29:22] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 09:29:23] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 09:29:23] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 09:29:23] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 09:29:23] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 09:29:23] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 17.207 seconds (JVM running for 18.935)
+[ INFO ] [2018-03-07 09:29:23] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 09:29:23] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 09:29:23] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 09:29:23] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 09:36:23] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 3624 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 09:36:23] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 09:36:26] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 09:36:26] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 09:36:26] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 09:36:35] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 09:36:35] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 09:36:35] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 09:36:35] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 09:36:35] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 09:36:35] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 09:36:35] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 09:36:35] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 12.201 seconds (JVM running for 13.234)
+[ INFO ] [2018-03-07 11:06:35] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 11:06:35] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 11:06:35] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 11:06:35] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 11:22:35] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 6468 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 11:22:35] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 11:22:38] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 11:22:38] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 11:22:38] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 11:22:49] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 11:22:49] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 11:22:49] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 11:22:49] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 11:22:49] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 11:22:49] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 11:22:49] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 11:22:49] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 14.521 seconds (JVM running for 16.685)
+[ INFO ] [2018-03-07 11:22:52] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 11:22:52] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 11:22:52] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 11:22:52] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 11:31:40] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 5092 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 11:31:40] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 11:31:43] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 11:31:43] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 11:31:43] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 11:31:52] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 11:31:52] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 11:31:52] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 11:31:52] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 11:31:52] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 11:31:52] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 11:31:52] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 11:31:52] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 12.57 seconds (JVM running for 13.561)
+[ INFO ] [2018-03-07 11:32:05] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 11:32:05] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 11:32:05] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 11:32:05] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 11:48:25] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 6952 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 11:48:25] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 11:48:27] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 11:48:27] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 11:48:27] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 11:48:37] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 11:48:37] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 11:48:37] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 11:48:37] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 11:48:37] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 11:48:37] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 11:48:37] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 11:48:37] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 12.409 seconds (JVM running for 13.311)
+[ INFO ] [2018-03-07 11:50:47] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 11:50:47] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 11:50:47] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 11:50:47] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 11:59:36] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 2632 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 11:59:36] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 11:59:39] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 11:59:39] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 11:59:39] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 11:59:48] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 11:59:48] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 11:59:48] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 11:59:48] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 11:59:48] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 11:59:48] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 11:59:48] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 11:59:48] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 12.419 seconds (JVM running for 13.298)
+[ INFO ] [2018-03-07 12:01:26] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 12:01:26] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 12:01:26] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 12:01:26] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 12:07:39] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 5592 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 12:07:39] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 12:07:42] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 12:07:42] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 12:07:42] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 12:07:51] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 12:07:51] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 12:07:51] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 12:07:51] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 12:07:51] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 12:07:51] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 12:07:51] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 12:07:51] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 12.364 seconds (JVM running for 13.327)
+[ INFO ] [2018-03-07 12:08:59] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 12:08:59] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 12:08:59] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 12:08:59] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 12:09:39] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 6480 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 12:09:39] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 12:09:41] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 12:09:41] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 12:09:41] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 12:09:51] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 12:09:51] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 12:09:51] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 12:09:51] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 12:09:51] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 12:09:51] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 12:09:51] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 12:09:51] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 12.209 seconds (JVM running for 13.078)
+[ INFO ] [2018-03-07 12:09:58] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 12:09:58] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 12:09:58] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 29 ms
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 12:09:58] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2018-03-07 12:11:13] com.loy.SingleApplicationMain [48] - Starting SingleApplicationMain on RM5HFL0LNTIJY7F with PID 4400 (started by Administrator in E:\小猫洗车\03编码\wc_platform_demo\demo-single)
+[ INFO ] [2018-03-07 12:11:13] com.loy.SingleApplicationMain [665] - The following profiles are active: prod
+[ INFO ] [2018-03-07 12:11:15] org.apache.catalina.core.StandardService [179] - Starting service Tomcat
+[ INFO ] [2018-03-07 12:11:15] org.apache.catalina.core.StandardEngine [179] - Starting Servlet Engine: Apache Tomcat/8.5.6
+[ INFO ] [2018-03-07 12:11:15] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2018-03-07 12:11:24] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [120] - Context refreshed
+[ INFO ] [2018-03-07 12:11:24] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [123] - Found 1 custom documentation plugin(s)
+[ INFO ] [2018-03-07 12:11:24] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [44] - Scanning for api listing references
+[ INFO ] [2018-03-07 12:11:24] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [40] - Generating unique operation named: allUsingGET_1
+[ INFO ] [2018-03-07 12:11:24] org.apache.coyote.http11.Http11NioProtocol [179] - Initializing ProtocolHandler ["http-nio-8080"]
+[ INFO ] [2018-03-07 12:11:24] org.apache.coyote.http11.Http11NioProtocol [179] - Starting ProtocolHandler [http-nio-8080]
+[ INFO ] [2018-03-07 12:11:24] org.apache.tomcat.util.net.NioSelectorPool [179] - Using a shared selector for servlet write/read
+[ INFO ] [2018-03-07 12:11:24] com.loy.SingleApplicationMain [57] - Started SingleApplicationMain in 11.918 seconds (JVM running for 12.891)
+[ INFO ] [2018-03-07 14:09:43] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2018-03-07 14:09:43] com.loy.e.core.web.dispatch.DefaultDispatchServlet [489] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2018-03-07 14:09:43] com.loy.e.core.web.dispatch.DefaultDispatchServlet [508] - FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2018-03-07 14:09:44] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED

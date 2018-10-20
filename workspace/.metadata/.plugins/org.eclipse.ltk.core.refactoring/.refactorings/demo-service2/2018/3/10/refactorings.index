@@ -1,0 +1,15 @@
+1520301921977	Delete elements
+1520301940038	Rename type 'SiteQueryParam'
+1520301959224	Delete elements
+1520301973932	Rename type 'SiteEntity'
+1520302013703	Delete elements
+1520302026070	Rename type 'SiteRepository'
+1520302081180	Delete elements
+1520302091430	Rename type 'SiteServiceImpl'
+1520302130626	Rename field 'siteRepository'
+1520302153557	Rename method 'findSitePage'
+1520302216229	Rename local variable 'siteQueryParam'
+1520302542348	Delete elements
+1520302568093	Rename resource 'site_en_US.properties'
+1520302576234	Rename resource 'site_zh_CN.properties'
+1520302581658	Rename resource 'site.properties'

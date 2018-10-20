@@ -1,0 +1,12 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+jar {
+	baseName = "demo-ui"
+}
+
+
+dependencies {
+	compile ("com.demo:e-core-ui:${eversion}")
+}
+

@@ -1,0 +1,476 @@
+<div  th:id="${serviceContext}+'_timedTask_container'">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="search_box" class="widget-box  ui-sortable-handle collapsed">
+				<div class="widget-header">
+				    <div class="nav-search"  style="padding-top: 5px;  right: 50px">
+						<span class="input-icon">
+							<input type="text"  i18n="com.loy.e.basic.data.timedTask.taskName" placeholder=" "   id="queryParam_taskName" class="nav-search-input"  />
+							<i class="ace-icon fa fa-search nav-search-icon"
+							 th:onclick="'$(\'#timedTaskSearchBtn\',$(\'#'+${serviceContext}+'_timedTask_container\')).click()'" ></i>
+						</span>
+					</div>
+				    
+					<div class="widget-toolbar">
+						<a href="#" data-action="collapse">
+							<i class="1 ace-icon fa bigger-125 fa-chevron-up"></i>
+						</a>
+					</div>
+
+				</div>
+
+				<div class="widget-body" style="display: none;">
+					<div class="widget-main">
+						<div class="row">
+							<div style="padding-left: 10px">
+					           <div class="col-xs-12 col-sm-2 " style="float:right">
+							    <div id="timedTaskSearchDiv" class="input-group" style="padding-bottom: 2px">
+								  
+									<span class="input-group-btn" >
+										<button id="timedTaskSearchBtn" type="button" class="btn btn-purple btn-sm">
+											<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+											<span i18n="find"></span>
+										</button>
+									</span>
+				              </div>
+				              </div>
+				         </div>     
+			            </div>
+					</div>
+				</div>
+			</div>
+							    
+			
+			<table id="timedTask_grid-table"></table>
+
+			<div id="timedTask_grid-pager"></div>
+
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+	
+	
+	<div id="timedTaskModalDiv" class="modal fade" tabindex="-1" data-backdrop="static">
+		<div class="modal-dialog" >
+				<div class="modal-content">
+					<div class="modal-header no-padding">
+						<div class="table-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="white">&times;</span>
+							</button>
+							<span i18n="com.loy.e.basic.data.timedTask"></span>
+						</div>
+					</div>
+					<div class="modal-body" style="max-height: 450px;overflow-y: scroll;">
+						<div id="modal-tip" class="red clearfix"></div>
+						<div>
+							<div class="widget-body">
+								<form id="timedTaskForm" name="timedTaskForm" class="form-horizontal  col-xs-12">
+								     <input type="hidden"  name="id" id="id"/>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.taskName"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="taskName" name="taskName" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.initStatus"></label>
+					                          <div class="col-sm-9">
+					                          <select id="initStatus" name="initStatus">
+						                         <option value ="START" >START</option>
+						                         <option value ="STOP" >STOP</option>
+					                          </select>
+					                            
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.cron"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="cron" name="cron" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.serviceName"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="serviceName" name="serviceName" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.exeMethod"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="exeMethod" name="exeMethod" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.description"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="description" name="description" />
+					                          </div>
+					                     </div>
+                                    </div>
+								</form>
+									
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer no-margin-top">
+						<div class="text-center">
+							
+							<button id="submitTimedTaskBtn"  class="btn btn-sm btn-primary">
+							  <i class="ace-icon fa fa-floppy-o"></i>
+							  <span i18n="save"></span>
+							</button>
+							
+							<button class="btn btn-sm"  data-dismiss="modal">
+							  <i class="ace-icon fa fa-share "></i>
+							 <span i18n="cancel"></span>
+							</button>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			
+		</div><!-- /.modal-dialog -->
+	</div>
+	
+	
+	
+	
+     <div id="timedTaskViewModalDiv" class="modal fade" tabindex="-1" data-backdrop="static">
+		<div class="modal-dialog" >
+				<div class="modal-content">
+					<div class="modal-header no-padding">
+						<div class="table-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="white">&times;</span>
+							</button>
+							<span i18n="com.loy.e.basic.data.timedTask"></span>
+						</div>
+					</div>
+					<div class="modal-body" style="max-height: 450px;overflow-y: scroll;">
+						<div id="modal-tip" class="red clearfix"></div>
+						<div>
+							<div class="widget-body">
+								<form class="form-horizontal  col-xs-12">
+								    
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.taskName"></label>
+					                          <div class="col-sm-9"  id="view_taskName"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.status"></label>
+					                          <div class="col-sm-9"  id="view_initStatus"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.cron"></label>
+					                          <div class="col-sm-9"  id="view_cron"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.serviceName"></label>
+					                          <div class="col-sm-9"  id="view_serviceName"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.exeMethod"></label>
+					                          <div class="col-sm-9"  id="view_exeMethod"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.timedTask.description"></label>
+					                          <div class="col-sm-9"  id="view_description"> 
+					                          </div>
+					                     </div>
+                                    </div>
+								</form>
+									
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer no-margin-top">
+						<div class="text-center">
+							<button class="btn btn-sm"  data-dismiss="modal">
+							  <i class="ace-icon fa fa-share "></i>
+							 <span i18n="cancel"></span>
+							</button>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			
+		</div><!-- /.modal-dialog -->
+	</div>
+	
+</div>
+
+
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+var scripts = [ null,null ];
+$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	var serviceContext = [[${serviceContext}]];
+	var containerId = '#'+[[${serviceContext}]]+'_timedTask_container';
+	var $container = $(containerId);
+	var grid_selector  = "#timedTask_grid-table";
+	var pager_selector = "#timedTask_grid-pager";
+	
+	
+	var colNames;
+	var  timedTaskGrid = null;
+	$.loy.i18n([serviceContext+'/i18n/data/timedTask'],$.homeGlobal.LANG,$container,{custCallback:function(){
+		$('input, textarea',$container).placeholder();
+		colNames =[' ',
+			$.i18n.prop("com.loy.e.basic.data.timedTask.taskName") ,
+			$.i18n.prop("com.loy.e.basic.data.timedTask.status") ,
+			$.i18n.prop("com.loy.e.basic.data.timedTask.initStatus") ,
+			$.i18n.prop("com.loy.e.basic.data.timedTask.cron") ,
+			$.i18n.prop("com.loy.e.basic.data.timedTask.serviceName") ,
+			$.i18n.prop("com.loy.e.basic.data.timedTask.exeMethod") ,
+			$.i18n.prop("com.loy.e.basic.data.timedTask.description")
+		];
+		$('#search_box',$container).on('shown.ace.widget', function(e) {
+			$('.chosen-container',$('#search_box',$container)).each(function() {
+				 var $this = $(this);
+				 $this.css({'width': $this.parent().width()});
+			});
+			var searchConditionHeight = $('.widget-body',$('#search_box',$container)).height();
+			timedTaskGrid.setGridHeight(getGridDefaultHeight()-searchConditionHeight);
+		});
+		$('#search_box',$container).on('hide.ace.widget', function(e) {
+			var searchConditionHeight = $('.widget-body',$('#search_box',$container)).height();
+			timedTaskGrid.setGridHeight(getGridDefaultHeight());
+		});
+		createTimedTaskGrid();
+	}});
+	
+	var $validateTimedTaskForm = $('#timedTaskForm',$container).validate({
+    	onsubmit:false,
+    	rules : {
+    		taskName : {
+				required : true,
+			},
+			cron : {
+				required : true,
+			},
+			
+			serviceName : {
+				required : true,
+			},
+			exeMethod : {
+				required : true,
+			}
+		}
+    });
+	function clearTimedTaskForm(){
+		$validateTimedTaskForm.resetForm();
+		$('#taskName',$container).val('');
+		$('#initStatus',$container).val('START');
+		$('#cron',$container).val('');
+		$('#serviceName',$container).val('');
+		$('#exeMethod',$container).val('');
+		$('#description',$container).val('');
+	}
+	function edit (id){
+		clearTimedTaskForm();
+		$('#submitTimedTaskBtn',$container).attr("url",serviceContext+"/timedTask/update");
+		$('#timedTaskModalDiv',$container).modal("show");
+		$.loy.ajax({
+			url:serviceContext+'/timedTask/get',
+			shade:false,
+			data:{id:id},
+			success:function(data){
+				var result = data.data;
+				$('#id',$container).val(result.id?result.id:'');
+				$('#taskName',$container).val(result.taskName?result.taskName:'');
+				$('#initStatus',$container).val(result.initStatus?result.initStatus:'');
+				$('#cron',$container).val(result.cron?result.cron:'');
+				$('#serviceName',$container).val(result.serviceName?result.serviceName:'');
+				$('#exeMethod',$container).val(result.exeMethod?result.exeMethod:'');
+				$('#description',$container).val(result.description?result.description:'');
+			}
+	   });
+	}
+	function view (id){
+		$('#timedTaskViewModalDiv').modal("show");
+		$.loy.ajax({
+			url:serviceContext+'/timedTask/get',
+			shade:false,
+			data:{id:id},
+			success:function(data){
+				var result = data.data;
+				var v = null;
+				v = $.loy.getObjectValue(result,"taskName");
+				$('#view_taskName',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"status");
+				$('#view_initStatus',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"cron");
+				$('#view_cron',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"serviceName");
+				$('#view_serviceName',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"exeMethod");
+				$('#view_exeMethod',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"description");
+				$('#view_description',$container).html(v?v:'');
+			}
+		});
+    }
+	function add(){
+		clearTimedTaskForm();
+		$('#id',$container).val('');
+		$('#submitTimedTaskBtn',$container).attr("url",serviceContext+"/timedTask/save");
+		$('#timedTaskModalDiv',$container).modal("show");
+	}
+  
+	$('#queryParam_taskName',$container).bind('keypress',function(event){
+        if(event.keyCode == "13"){
+           $('#timedTaskSearchBtn',$container).click();
+        }
+    });
+	$("#timedTaskSearchBtn",$container).click(function(){
+		var postData ={page:0};
+		postData["taskName"] = $("#queryParam_taskName",$container).val();	
+		timedTaskGrid.loyGrid("setGridParam",{"postData":postData,"page":1}).trigger("reloadGrid"); 	
+	});
+	
+	$('#submitTimedTaskBtn').click(function(){
+		if(!$validateTimedTaskForm.checkForm()){
+			$validateTimedTaskForm.defaultShowErrors();
+			return;
+		}
+		var url = $(this).attr("url");
+        $.loy.ajax({
+				url:url,
+				data:$("#timedTaskForm",$container).serialize(),
+				success:function(data){
+					if(data.success){
+						$('#timedTaskModalDiv',$container).modal("hide");
+						timedTaskGrid.trigger("reloadGrid");
+					}
+				}
+		});
+    });
+	function  createTimedTaskGrid(){
+		timedTaskGrid =jQuery(grid_selector).loyGrid({
+			url: serviceContext+'/timedTask/page',
+			datatype: "json",
+			mtype: 'GET',
+			colNames:colNames,
+			colModel: [
+				{name:'myac',index:'', width:120, fixed:true, sortable:false, resize:false ,
+					formatter:'actions', 
+					formatoptions:getFormatoptions(serviceContext+'/timedTask/','timedTask')
+				},
+		   		{ name: 'taskName', index: 'taskName',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'status', index: 'status',sortable:false, width: 60, align: "left", editable: false} ,
+		   		{ name: 'initStatus', index: 'initStatus',sortable:false, width: 60, align: "left", editable: false} ,
+		   		{ name: 'cron', index: 'cron',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'serviceName', index: 'serviceName',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'exeMethod', index: 'exeMethod',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'description', index: 'description',sortable:false, width: 120, align: "left", editable: false}
+			],
+			pager: pager_selector,
+			//width:$(".page-content").width(),
+			//height: '310',
+			loadComplete:function(data){
+				loadComplete(data);
+				var list = data.data?data.data.content:null;
+				if(list){
+					for(var i=0;i<list.length;i++){
+						var editDivId = "jEditButton_"+list[i].id;
+						$('#'+editDivId,timedTaskGrid).attr('onclick','').on('click',function(){
+							edit($(this).closest('tr').attr('id'));
+						});
+						if(list[i].scheduledTaskEnabled){
+							var jSaveButton = "jSaveButton_"+list[i].id;
+							$('#'+jSaveButton,timedTaskGrid).attr("realId",list[i].id);
+							if(list[i].status=='START'){
+								var $activate = $('<div title="'+$.i18n.prop("com.loy.e.basic.data.timedTask.stop")+'"  id="'+list[i].id+'"  style="float:left;margin-left:5px;" class="ui-pg-div ui-inline-del"  onmouseover="jQuery(this).addClass(\'ui-state-hover\');" onmouseout="jQuery(this).removeClass(\'ui-state-hover\');"  data-original-title="所选记录"><span class="ui-icon fa-stop-circle-o"></span></div>');
+								$activate.on('click',function(){
+									stop($(this).attr('id'));
+								});
+								if(hasPermissionByCode('timedTask:start')){
+									$('#'+jSaveButton,timedTaskGrid).parent().append($activate);
+								}
+								
+							}else if (list[i].status=='STOP'){
+								var $suspend = $('<div title="'+$.i18n.prop("com.loy.e.basic.data.timedTask.start")+'"  id="'+list[i].id+'"  style="float:left;margin-left:5px;" class="ui-pg-div ui-inline-del"  onmouseover="jQuery(this).addClass(\'ui-state-hover\');" onmouseout="jQuery(this).removeClass(\'ui-state-hover\');"  data-original-title="所选记录"><span class="ui-icon fa-play-circle-o"></span></div>');
+								$suspend.on('click',function(){
+									start($(this).attr('id'));
+								});
+								if(hasPermissionByCode('timedTask:stop')){
+									$('#'+jSaveButton,timedTaskGrid).parent().append($suspend);
+								}
+								
+							}
+						}
+					}
+				}	
+			}
+		}).loyGrid('navGrid','#timedTask_grid-pager',{
+			"baseUrl":serviceContext+"/timedTask/",
+			accessCodePrefix:'timedTask',
+			"addfunc":function(){
+				add();
+			},
+			"editfunc":function(rowId){
+				edit(rowId);
+			},
+			"viewfunc":function(rowId){
+				view(rowId);
+			},
+			view: true
+		});
+		timedTaskGrid.jqGrid('setFrozenColumns');
+	}
+	
+	function start(id){
+		$.loy.ajax({
+			url:serviceContext+"/timedTask/start",
+			data:{"id":id},
+			success:function(data){
+				if(data.success){
+					timedTaskGrid.trigger("reloadGrid");
+				}
+			}
+		});
+	}
+	
+	function stop(id){
+		$.loy.ajax({
+			url:serviceContext+"/timedTask/stop",
+			data:{"id":id},
+			success:function(data){
+				if(data.success){
+					timedTaskGrid.trigger("reloadGrid");
+				}
+			}
+		});
+	}
+});
+/*]]>*/
+</script>

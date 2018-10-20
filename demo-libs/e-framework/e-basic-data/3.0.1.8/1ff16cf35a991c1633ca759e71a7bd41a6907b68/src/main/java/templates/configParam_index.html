@@ -1,0 +1,412 @@
+<div  th:id="${serviceContext}+'_configParam_container'">
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="search_box" class="widget-box  ui-sortable-handle collapsed">
+				<div class="widget-header">
+				    <div class="nav-search"  style="padding-top: 5px;  right: 50px">
+						<span class="input-icon">
+							<input type="text"  i18n="com.loy.basic.data.configParam.name" placeholder=" "   id="queryParam_name" class="nav-search-input" />
+							<i class="ace-icon fa fa-search nav-search-icon"
+							 th:onclick="'$(\'#configParamSearchBtn\',$(\'#'+${serviceContext}+'_configParam_container\')).click()'" ></i>
+						</span>
+					</div>
+				    
+					<div class="widget-toolbar">
+						<a href="#" data-action="collapse">
+							<i class="1 ace-icon fa bigger-125 fa-chevron-up"></i>
+						</a>
+					</div>
+
+				</div>
+
+				<div class="widget-body" style="display: none;">
+					<div class="widget-main">
+						<div class="row">
+							<div style="padding-left: 10px">
+					           <div class="col-xs-12 col-sm-2 " style="float:right">
+							    <div id="configParamSearchDiv" class="input-group" style="padding-bottom: 2px">
+								  
+									<span class="input-group-btn" >
+										<button id="configParamSearchBtn" type="button" class="btn btn-purple btn-sm">
+											<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+											<span i18n="find"></span>
+										</button>
+									</span>
+				              </div>
+				              </div>
+				         </div>     
+			            </div>
+					</div>
+				</div>
+			</div>
+							    
+			
+			<table id="configParam_grid-table"></table>
+
+			<div id="configParam_grid-pager"></div>
+
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+	
+	
+	<div id="configParamModalDiv" class="modal fade" tabindex="-1" data-backdrop="static">
+		<div class="modal-dialog" >
+				<div class="modal-content">
+					<div class="modal-header no-padding">
+						<div class="table-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="white">&times;</span>
+							</button>
+							<span i18n="com.loy.basic.data.configParam"></span>
+						</div>
+					</div>
+					<div class="modal-body" style="max-height: 450px;overflow-y: scroll;">
+						<div id="modal-tip" class="red clearfix"></div>
+						<div>
+							<div class="widget-body">
+								<form id="configParamForm" name="configParamForm" class="form-horizontal  col-xs-12">
+								     <input type="hidden"  name="id" id="id"/>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.name"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  disabled="disabled" class="form-control" id="name" name="name" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.paramKey"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  disabled="disabled" class="form-control" id="paramKey" name="paramKey" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.val"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="val" name="val" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.description"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text" disabled="disabled"  class="form-control" id="description" name="description" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                   
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.errorMsg"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  disabled="disabled"  class="form-control" id="errorMsg" name="errorMsg" />
+					                          </div>
+					                     </div>
+                                    </div>
+								</form>
+									
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer no-margin-top">
+						<div class="text-center">
+							
+							<button id="submitConfigParamBtn"  class="btn btn-sm btn-primary">
+							  <i class="ace-icon fa fa-floppy-o"></i>
+							  <span i18n="save"></span>
+							</button>
+							
+							<button class="btn btn-sm"  data-dismiss="modal">
+							  <i class="ace-icon fa fa-share "></i>
+							 <span i18n="cancel"></span>
+							</button>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			
+		</div><!-- /.modal-dialog -->
+	</div>
+	
+	
+	
+	
+     <div id="configParamViewModalDiv" class="modal fade" tabindex="-1" data-backdrop="static">
+		<div class="modal-dialog" >
+				<div class="modal-content">
+					<div class="modal-header no-padding">
+						<div class="table-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="white">&times;</span>
+							</button>
+							<span i18n="com.loy.basic.data.configParam"></span>
+						</div>
+					</div>
+					<div class="modal-body" style="max-height: 450px;overflow-y: scroll;">
+						<div id="modal-tip" class="red clearfix"></div>
+						<div>
+							<div class="widget-body">
+								<form class="form-horizontal  col-xs-12">
+								    
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.name"></label>
+					                          <div class="col-sm-6"  id="view_name"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    
+                                     <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.paramKey"></label>
+					                          <div class="col-sm-6"  id="view_paramKey"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.val"></label>
+					                          <div class="col-sm-6"  id="view_val"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.description"></label>
+					                          <div class="col-sm-6"  id="view_description"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.regularExpression"></label>
+					                          <div class="col-sm-6"  id="view_regularExpression"> 
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.basic.data.configParam.errorMsg"></label>
+					                          <div class="col-sm-6"  id="view_errorMsg"> 
+					                          </div>
+					                     </div>
+                                    </div>
+								</form>
+									
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer no-margin-top">
+						<div class="text-center">
+							<button class="btn btn-sm"  data-dismiss="modal">
+							  <i class="ace-icon fa fa-share "></i>
+							 <span i18n="cancel"></span>
+							</button>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			
+		</div><!-- /.modal-dialog -->
+	</div>
+	
+</div>
+
+
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+var scripts = [ null,null ];
+$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	var serviceContext = [[${serviceContext}]];
+	var containerId = '#'+[[${serviceContext}]]+'_configParam_container';
+	var $container = $(containerId);
+	var grid_selector  = "#configParam_grid-table";
+	var pager_selector = "#configParam_grid-pager";
+
+	var colNames;
+	var  configParamGrid = null;
+	$.loy.i18n([serviceContext+'/i18n/data/configParam'],$.homeGlobal.LANG,$container,{custCallback:function(){
+		$('input, textarea',$container).placeholder();
+		colNames =[' ',
+			$.i18n.prop("com.loy.basic.data.configParam.name") ,
+			$.i18n.prop("com.loy.basic.data.configParam.paramKey") ,
+			$.i18n.prop("com.loy.basic.data.configParam.val") ,
+			$.i18n.prop("com.loy.basic.data.configParam.description") ,
+			$.i18n.prop("com.loy.basic.data.configParam.errorMsg")
+		];
+		$('#search_box',$container).on('shown.ace.widget', function(e) {
+			$('.chosen-container',$('#search_box',$container)).each(function() {
+				 var $this = $(this);
+				 $this.css({'width': $this.parent().width()});
+			});
+			var searchConditionHeight = $('.widget-body',$('#search_box',$container)).height();
+			configParamGrid.setGridHeight(getGridDefaultHeight()-searchConditionHeight);
+		});
+		$('#search_box',$container).on('hide.ace.widget', function(e) {
+			var searchConditionHeight = $('.widget-body',$('#search_box',$container)).height();
+			configParamGrid.setGridHeight(getGridDefaultHeight());
+		});
+		createConfigParamGrid();
+	}});
+	
+	var $validateConfigParamForm = $('#configParamForm',$container).validate({
+    	onsubmit:false,
+    	rules : {
+			paramKey : {
+				required : true,
+			}
+		}
+    });
+	function clearConfigParamForm(){
+		$('#submitConfigParamBtn',$container).attr("disabled",false);
+		$('#name',$container).val('');
+		$('#paramKey',$container).val('');
+		$('#val',$container).val('');
+		$('#description',$container).val('');
+		$('#regularExpression',$container).val('');
+		$('#errorMsg',$container).val('');
+	}
+	function edit (id){
+		clearConfigParamForm();
+		$('#submitConfigParamBtn',$container).attr("url",serviceContext+"/configParam/update");
+		$('#configParamModalDiv',$container).modal("show");
+		$.loy.ajax({
+			url:serviceContext+'/configParam/get',
+			shade:false,
+			data:{id:id},
+			success:function(data){
+				var result = data.data;
+				$('#id',$container).val(result.id?result.id:'');
+				$('#name',$container).val(result.name?result.name:'');
+				$('#paramKey',$container).val(result.paramKey?result.paramKey:'');
+				$('#val',$container).val(result.val?result.val:'');
+				$('#description',$container).val(result.description?result.description:'');
+				$('#regularExpression',$container).val(result.regularExpression?result.regularExpression:'');
+				$('#errorMsg',$container).val(result.errorMsg?result.errorMsg:'');
+			}
+	   });
+	}
+	function view (id){
+		$('#configParamViewModalDiv').modal("show");
+		$.loy.ajax({
+			url:serviceContext+'/configParam/get',
+			shade:false,
+			data:{id:id},
+			success:function(data){
+				var result = data.data;
+				var v = null;
+				v = $.loy.getObjectValue(result,"name");
+				$('#view_name',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"paramKey");
+				$('#view_paramKey',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"val");
+				$('#view_val',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"description");
+				$('#view_description',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"regularExpression");
+				$('#view_regularExpression',$container).html(v?v:'');
+				v = $.loy.getObjectValue(result,"errorMsg");
+				$('#view_errorMsg',$container).html(v?v:'');
+			}
+		});
+    }
+	function add(){
+		clearConfigParamForm();
+		$('#id',$container).val('');
+		$('#submitConfigParamBtn',$container).attr("url",serviceContext+"/configParam/save");
+		$('#configParamModalDiv',$container).modal("show");
+	}
+  
+	$('#queryParam_name',$container).bind('keypress',function(event){
+        if(event.keyCode == "13"){
+           $('#configParamSearchBtn',$container).click();
+        }
+    });
+	$("#configParamSearchBtn",$container).click(function(){
+		var postData ={page:0};
+		postData["name"] = $("#queryParam_name",$container).val();	
+		configParamGrid.loyGrid("setGridParam",{"postData":postData,"page":1}).trigger("reloadGrid"); 	
+	});
+	
+	$('#submitConfigParamBtn',$container).click(function(){
+		if(!$validateConfigParamForm.checkForm()){
+			$validateConfigParamForm.defaultShowErrors();
+			return;
+		}
+		var url = $(this).attr("url");
+        $.loy.ajax({
+				url:url,
+				enabledButtons:[$('#submitConfigParamBtn',$container)],
+				data:$("#configParamForm",$container).serialize(),
+				success:function(data){
+					if(data.success){
+						$('#configParamModalDiv',$container).modal("hide");
+						configParamGrid.trigger("reloadGrid");
+					}
+				}
+		});
+    });
+	function  createConfigParamGrid(){
+		var formatoptions = getFormatoptions(serviceContext+'/configParam/','configParam');
+		formatoptions.delbutton = false;
+		configParamGrid =jQuery(grid_selector).loyGrid({
+			url: serviceContext+'/configParam/page',
+			datatype: "json",
+			mtype: 'GET',
+			colNames:colNames,
+			colModel: [
+				{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false ,
+					formatter:'actions', 
+					formatoptions:formatoptions
+				},
+		   		{ name: 'name', index: 'name',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'paramKey', index: 'paramKey',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'val', index: 'val',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'description', index: 'description',sortable:false, width: 100, align: "left", editable: false} ,
+		   		{ name: 'errorMsg', index: 'errorMsg',sortable:false, width: 100, align: "left", editable: false}
+			],
+			pager: pager_selector,
+			//width:$(".page-content").width(),
+			//height: '310',
+			loadComplete:function(data){
+				loadComplete(data);
+				var dataList = data.data?data.data.content:null;
+				if(dataList){
+					for(var i=0;i<dataList.length;i++){
+						var editDivId = "jEditButton_"+dataList[i].id;
+						$('#'+editDivId,configParamGrid).attr('onclick','').on('click',function(){
+							edit($(this).closest('tr').attr('id'));
+						});
+					}
+				}	
+			}
+		}).loyGrid('navGrid','#configParam_grid-pager',{
+			"baseUrl":serviceContext+"/configParam/",
+			accessCodePrefix:'configParam',
+			"addfunc":function(){
+				add();
+			},
+			"editfunc":function(rowId){
+				edit(rowId);
+			},
+			"viewfunc":function(rowId){
+				view(rowId);
+			},
+			view: false,
+			add:false,
+			del:false
+		});
+		configParamGrid.jqGrid('setFrozenColumns');
+	}
+});
+/*]]>*/
+</script>

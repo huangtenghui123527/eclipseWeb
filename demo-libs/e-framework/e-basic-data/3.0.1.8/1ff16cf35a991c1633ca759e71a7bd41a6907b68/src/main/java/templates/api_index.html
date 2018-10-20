@@ -1,0 +1,19 @@
+
+<div th:id="${serviceContext}+'_api_container'" style="padding-left: 5px">
+	<div class="row" >
+		<iframe id="swaggerUiFrame"  frameborder="0" marginheight="0"
+			marginwidth="0" width="100%" height="500" scrolling="auto"
+			></iframe>
+	</div>
+</div>
+<script th:inline="javascript">
+var scripts = [ null,null ];
+/*<![CDATA[*/
+$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	var serviceContext = [[${serviceContext}]];
+	var containerId = '#'+[[${serviceContext}]]+'_api_container';
+	var $container = $(containerId);
+	$('#swaggerUiFrame',$container).attr("src",serviceContext+"/swagger-ui.html");
+});
+/*]]>*/
+</script>

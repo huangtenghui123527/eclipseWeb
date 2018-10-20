@@ -1,0 +1,354 @@
+<div  th:id="${serviceContext}+'_dictionary_container'">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="search_box" class="widget-box  ui-sortable-handle collapsed">
+				<div class="widget-header">
+				    <div class="nav-search"  style="padding-top: 5px;  right: 50px">
+						<span class="input-icon">
+							<input type="text"  i18n="com.loy.e.basic.data.dictionary.name" placeholder=" "   id="queryParam_name" class="nav-search-input"  />
+							<i class="ace-icon fa fa-search nav-search-icon"
+							 th:onclick="'$(\'#dictionarySearchBtn\',$(\'#'+${serviceContext}+'dictionary_container\')).click()'" ></i>
+						</span>
+					</div>
+				    
+					<div class="widget-toolbar">
+						<a href="#" data-action="collapse">
+							<i class="1 ace-icon fa bigger-125 fa-chevron-up"></i>
+						</a>
+					</div>
+
+				</div>
+
+				<div class="widget-body" style="display: none;">
+					<div class="widget-main">
+						<div class="row">
+							<div style="padding-left: 10px">
+					           <div class="col-xs-12 col-sm-2 " style="float:right">
+							    <div id="dictionarySearchDiv" class="input-group" style="padding-bottom: 2px">
+								  
+									<span class="input-group-btn" >
+										<button id="dictionarySearchBtn" type="button" class="btn btn-purple btn-sm">
+											<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+											<span i18n="find"></span>
+										</button>
+									</span>
+				              </div>
+				              </div>
+				         </div>     
+			            </div>
+					</div>
+				</div>
+			</div>
+							    
+			
+			<table id="dictionary_grid-table" class="e-tree-grid"></table>
+
+			<div id="dictionary_grid-pager"></div>
+
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+	
+	
+	<div id="dictionaryModalDiv" class="modal fade" tabindex="-1" data-backdrop="static">
+		<div class="modal-dialog" >
+				<div class="modal-content">
+					<div class="modal-header no-padding">
+						<div class="table-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="white">&times;</span>
+							</button>
+							<span i18n="com.loy.e.basic.data.dictionary"></span>
+						</div>
+					</div>
+					<div class="modal-body" style="max-height: 450px;overflow-y: scroll;">
+						<div id="modal-tip" class="red clearfix"></div>
+						<div>
+							<div class="widget-body">
+								<form id="dictionaryForm" name="dictionaryForm" class="form-horizontal  col-xs-12">
+								     <input type="hidden"  name="id" id="id"/>
+								     <input type="hidden"  name="parentId" id="parentId"/>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.dictionary.name"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="name" name="name" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.dictionary.code"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="code" name="code" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.dictionary.i18nKey"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control" id="i18nKey" name="i18nKey" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                    <div class="row" style="padding-bottom: 2px">
+								         <div class="form-group">
+					                          <label class="col-sm-3 control-label"  i18n="com.loy.e.basic.data.dictionary.sortNum"></label>
+					                          <div class="col-sm-9">
+					                             <input type="text"  class="form-control spinner" id="sortNum" name="sortNum" />
+					                          </div>
+					                     </div>
+                                    </div>
+                                   
+								</form>
+									
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer no-margin-top">
+						<div class="text-center">
+							
+							<button id="submitDictionaryBtn"  class="btn btn-sm btn-primary">
+							  <i class="ace-icon fa fa-floppy-o"></i>
+							  <span i18n="save"></span>
+							</button>
+							
+							<button class="btn btn-sm"  data-dismiss="modal">
+							  <i class="ace-icon fa fa-share "></i>
+							 <span i18n="cancel"></span>
+							</button>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			
+		</div><!-- /.modal-dialog -->
+	</div>
+	
+</div>
+
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+var scripts = [ null,null ];
+var $dictionaryContainer = $('#'+[[${serviceContext}]]+'_dictionary_container');
+var  dictionaryGrid = null;
+var $validateDictionaryForm = null;
+$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	var serviceContext = [[${serviceContext}]];
+	var grid_selector  = "#dictionary_grid-table";
+	var pager_selector = "#dictionary_grid-pager";
+	
+	var colNames;
+
+	$('.spinner',$dictionaryContainer).ace_spinner({value:0,min:0,max:1000000,step:1, on_sides: true,
+		icon_up:'ace-icon fa fa-plus smaller-75', 
+		icon_down:'ace-icon fa fa-minus smaller-75',
+		btn_up_class:'btn-success' , 
+		btn_down_class:'btn-danger'});
+	
+	$.loy.i18n([serviceContext+'/i18n/data/dictionary'],$.homeGlobal.LANG,$dictionaryContainer,{custCallback:function(){
+		$('input, textarea',$dictionaryContainer).placeholder();
+		colNames =['',
+			$.i18n.prop("com.loy.e.basic.data.dictionary.name") ,
+			$.i18n.prop("com.loy.e.basic.data.dictionary.code") ,
+			$.i18n.prop("com.loy.e.basic.data.dictionary.i18nKey"),
+			$.i18n.prop("com.loy.e.basic.data.dictionary.sortNum"),
+			''
+			
+		];
+		$('#search_box',$dictionaryContainer).on('shown.ace.widget', function(e) {
+			$('.chosen-container',$('#search_box',$dictionaryContainer)).each(function() {
+				 var $this = $(this);
+				 $this.css({'width': $this.parent().width()});
+			});
+			var searchConditionHeight = $('.widget-body',$('#search_box',$dictionaryContainer)).height();
+			dictionaryGrid.setGridHeight(getGridDefaultHeight()-searchConditionHeight);
+		});
+		$('#search_box',$dictionaryContainer).on('hide.ace.widget', function(e) {
+			var searchConditionHeight = $('.widget-body',$('#search_box',$dictionaryContainer)).height();
+			dictionaryGrid.setGridHeight(getGridDefaultHeight());
+		});
+		createDictionaryGrid();
+	}});
+	
+	$validateDictionaryForm = $('#dictionaryForm',$dictionaryContainer).validate({
+    	onsubmit:false,
+    	rules : {
+    		name : {
+				required : true
+			},
+			code : {
+				required : true
+			}
+		}
+    });
+	
+  
+	$('#queryParam_name',$dictionaryContainer).bind('keypress',function(event){
+        if(event.keyCode == "13"){
+           $('#dictionarySearchBtn',$dictionaryContainer).click();
+        }
+    });
+	$("#dictionarySearchBtn",$dictionaryContainer).click(function(){
+		var postData ={page:0};
+		postData["name"] = $("#queryParam_name",$dictionaryContainer).val();	
+		dictionaryGrid.loyGrid("setGridParam",{"postData":postData,"page":1}).trigger("reloadGrid"); 	
+	});
+	
+	$('#submitDictionaryBtn').click(function(){
+		if(!$validateDictionaryForm.checkForm()){
+			$validateDictionaryForm.defaultShowErrors();
+			return;
+		}
+		var url = $(this).attr("url");
+        $.loy.ajax({
+				url:url,
+				data:$("#dictionaryForm",$dictionaryContainer).serialize(),
+				success:function(data){
+					var id = $('#id',$("#dictionaryForm",$dictionaryContainer)).val();
+					if(data.success){
+						$('#dictionaryModalDiv',$dictionaryContainer).modal("hide");
+						if(id && id !=""){
+							var rowData = dictionaryGrid.jqGrid('getRowData',id); 
+							rowData.id = id;
+							rowData.name = $('#name',$dictionaryContainer).val();
+							rowData.code = $('#code',$dictionaryContainer).val();
+							rowData.i18nKey = $('#i18nKey',$dictionaryContainer).val();
+							rowData.sortNum = $('#sortNum',$dictionaryContainer).val();
+							dictionaryGrid.jqGrid('setRowData',id,rowData);  
+						} else{
+							var parentId = $('#parentId',$dictionaryContainer).val();
+						    var result = data.data;
+						    var rowData = {};
+							rowData.name = result.name;
+							rowData.code = result.code;
+							rowData.i18nKey = result.i18nKey;
+							rowData.sortNum = result.sortNum;
+							rowData.parentId = parentId;
+							rowData.parent = parentId;
+							rowData.level = 1;
+							rowData.isLeaf = true;
+							rowData.expanded = false;
+							rowData.id = result.id;
+						    dictionaryGrid.jqGrid("addChildNode", result.id, parentId,rowData,rowData);
+						}
+					}
+				}
+		});
+    });
+	function  createDictionaryGrid(){
+		dictionaryGrid =jQuery(grid_selector).loyGrid({
+			url: serviceContext+'/dictionary/page',
+			datatype: "json",
+			mtype: 'GET',
+			colNames:colNames,
+			colModel: [
+				{ name: 'parentId', index: 'parentId',sortable:false, width: 100, align: "left", editable: true,hidden:true} ,
+		   		{ name: 'name', index: 'name',sortable:false, width: 100, align: "left", editable: true} ,
+		   		{ name: 'code', index: 'code',sortable:false, width: 100, align: "left", editable: true} ,
+		   		{ name: 'i18nKey', index: 'i18nKey',sortable:false, width: 100, align: "left", editable: true} ,
+		   		{ name: 'sortNum', index: 'sortNum',sortable:false, width: 40, align: "left", editable: true} ,
+		   		{name:'myac',index:'', width:100, fixed:true, sortable:false, resize:false ,
+					formatter:function(cellvalue, options, rowObject) {
+						var button = '<div title="'+$.jgrid.nav.edittitle+'" onclick=dictionaryEdit("'+rowObject.id+'");  style="float:left;margin-left:5px;" class="ui-pg-div ui-inline-del"  onmouseover="jQuery(this).addClass(\'ui-state-hover\');" onmouseout="jQuery(this).removeClass(\'ui-state-hover\');"  data-original-title="所选记录"><span class="ui-icon ui-icon-pencil"></span></div>';
+						if(rowObject.level ==0) {
+							var add ='<div title="'+$.jgrid.nav.addtitle+'" onclick=dictionaryAdd("'+rowObject.id+'");   style="float:left;margin-left:5px;" class="ui-pg-div ui-inline-del"  onmouseover="jQuery(this).addClass(\'ui-state-hover\');" onmouseout="jQuery(this).removeClass(\'ui-state-hover\');"  data-original-title="所选记录"><span class="ui-icon ace-icon fa fa-plus-circle purple"></span></div>';
+							button = button+add;   
+						}else{
+							var del ='<div title="'+$.jgrid.nav.deltitle+'" onclick=dictionaryDel("'+rowObject.id+'");  style="float:left;margin-left:5px;" class="ui-pg-div ui-inline-del"  onmouseover="jQuery(this).addClass(\'ui-state-hover\');" onmouseout="jQuery(this).removeClass(\'ui-state-hover\');"  data-original-title="所选记录"><span class="ui-icon ace-icon ace-icon fa fa-trash-o red"></span></div>';
+							button = button+del;   
+						}
+
+						return button;
+					}
+				}
+			],
+			page:true,
+			pager: pager_selector,
+			treeGrid: true,
+			gridview: true,
+			ExpandColumn: "name",
+			rownumbers: false, 
+			ExpandColClick:true,
+			treeGridModel: "adjacency",
+			//width:$(".page-content").width(),
+			//height: '310',
+			
+			loadComplete:function(data){
+				loadComplete(data);
+			}
+		}).loyGrid('navGrid','#dictionary_grid-pager',{
+			"baseUrl":serviceContext+"/dictionary/",
+			removeCols:[0,1,6,7,8,9,10,11],
+			accessCodePrefix:'dictionary',
+			view: true,
+			add:false,
+			edit:false,
+			del:false
+		});
+		dictionaryGrid.jqGrid('setFrozenColumns');
+	}
+	
+});
+function clearDictionaryForm(){
+	$validateDictionaryForm.resetForm();
+	$('#id',$dictionaryContainer).val('');
+	$('#name',$dictionaryContainer).val('');
+	$('#code',$dictionaryContainer).val('');
+	$('#i18nKey',$dictionaryContainer).val('');
+	$('#parentId',$dictionaryContainer).val('');
+	$('#sortNum',$dictionaryContainer).val('');
+}
+function dictionaryEdit (id){
+	clearDictionaryForm();
+	$('#submitDictionaryBtn',$dictionaryContainer).attr("url",[[${serviceContext}]]+"/dictionary/update");
+	$('#dictionaryModalDiv',$dictionaryContainer).modal("show");
+	$.loy.ajax({
+		url:[[${serviceContext}]]+'/dictionary/get',
+		data:{id:id},
+		shade:false,
+		success:function(data){
+			var result = data.data;
+			$('#id',$dictionaryContainer).val(result.id?result.id:'');
+			$('#name',$dictionaryContainer).val(result.name?result.name:'');
+			$('#code',$dictionaryContainer).val(result.code?result.code:'');
+			$('#i18nKey',$dictionaryContainer).val(result.i18nKey?result.i18nKey:'');
+			$('#sortNum',$dictionaryContainer).val(result.sortNum?result.sortNum:'');
+			$('#parentId',$dictionaryContainer).val(result.parentId?result.parentId:'');
+		}
+   });
+}
+function dictionaryAdd(parentId){
+	clearDictionaryForm();
+	$('#parentId',$dictionaryContainer).val(parentId);
+	$('#submitDictionaryBtn',$dictionaryContainer).attr("url",[[${serviceContext}]]+"/dictionary/save");
+	$('#dictionaryModalDiv',$dictionaryContainer).modal("show");
+	var rootNodes = dictionaryGrid.jqGrid('getRootNodes'); 
+	if(rootNodes){
+		for(var i=0;i<rootNodes.length;i++){
+			if(rootNodes[i]._id_ == parentId){
+				dictionaryGrid.jqGrid('expandRow', rootNodes[i]);
+				dictionaryGrid.jqGrid('expandNode',rootNodes[i]);
+				break;
+			}
+		}
+	}	
+}
+
+function dictionaryDel(id){
+	
+	$.loy.confirm($.i18n.prop('confirm_info_del'),function(){
+		$.loy.ajax({
+			url:[[${serviceContext}]]+'/dictionary/del',
+			data:{id:id},
+			success:function(data){
+				dictionaryGrid.jqGrid("delTreeNode", id); 
+			}
+	   });   
+	});	
+}
+/*]]>*/
+</script>

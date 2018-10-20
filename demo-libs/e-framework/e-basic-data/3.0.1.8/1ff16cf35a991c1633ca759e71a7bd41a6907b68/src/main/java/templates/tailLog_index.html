@@ -1,0 +1,68 @@
+<div  th:id="${serviceContext}+'_tailLog_container'">
+ <div class="row">
+  <div class="col-xs-12">
+   <div id="web_log_container" style="height: 500px; overflow-y: scroll; background: #333; color: #aaa; padding: 10px;">
+
+   </div>
+  </div>
+ </div>
+</div>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+var scripts = [ null,"component/assets/js/sockjs-0.3.min.js","component/assets/js/stomp.js",null ];
+$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	
+	var serviceContext = [[${serviceContext}]];
+	var tailLogUrl = [[${tailLogUrl}]];
+	var containerId = '#'+[[${serviceContext}]]+'_tailLog_container';
+	var $container = $(containerId);
+	
+	var $messageDiv = $("#web_log_container",$container);
+	//判断当前浏览器是否支持WebSocket
+	 /**
+	if('WebSocket' in window){
+	if(!window.tailLogWebsocket){
+		window.tailLogWebsocket = new WebSocket("ws://www.17jee.com/websocket/tailLog");
+	}  
+		websocket = window.tailLogWebsocket;
+	}
+	 else{
+		 alert('Not support websocket');
+	 }
+	*/
+	
+	ShowTailLog = function(container,messageDiv){
+		 this.container = container;
+		 this.messageDiv = messageDiv;
+	}
+    if(!window.stompClient){
+        var socket = new SockJS("http://www.17jee.com/websocket/socketjs");  
+        stompClient = Stomp.over(socket);
+        var showTailLog = new ShowTailLog($container,$messageDiv);
+        window.showTailLog = showTailLog;
+        window.stompClient=stompClient;
+        stompClient.connect({}, function (frame) {
+             stompClient.subscribe('/topic/tailLog', function(response){
+            	 var $container = window.showTailLog.container;
+            	 var $messageDiv = window.showTailLog.messageDiv;
+            	 $messageDiv.append(JSON.parse(response.body).lineMsg+"<br>");
+            	 $messageDiv[0].scrollTop = $messageDiv[0].scrollHeight;
+             });
+        });
+        
+    }else{
+    	 var showTailLog = new ShowTailLog($container,$messageDiv);
+    	 window.showTailLog = showTailLog;
+    }
+ 
+
+ window.onbeforeunload = function(){
+	 if (window.stompClient != null) {
+	    stompClient.disconnect();
+	 }
+}
+
+});
+/*]]>*/ 
+</script>

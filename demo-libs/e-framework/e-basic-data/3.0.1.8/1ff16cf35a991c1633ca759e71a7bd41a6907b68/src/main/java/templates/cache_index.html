@@ -1,0 +1,119 @@
+<div  th:id="${serviceContext}+'_cache_container'">
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="search_box" class="widget-box  ui-sortable-handle collapsed">
+				<div class="widget-header">
+				    <div class="nav-search"  style="padding-top: 5px;  right: 50px">
+						
+					</div>
+				    
+					<div class="widget-toolbar">
+						<a href="#" data-action="collapse">
+							<i class="1 ace-icon fa bigger-125 fa-chevron-up"></i>
+						</a>
+					</div>
+
+				</div>
+			</div>
+							    
+			
+			<table id="cache_grid-table"></table>
+
+			<div id="cache_grid-pager"></div>
+
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+	
+</div>
+
+
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+var scripts = [ null,null ];
+$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	var serviceContext = [[${serviceContext}]];
+	var containerId = '#'+[[${serviceContext}]]+'_cache_container';
+	var $container = $(containerId);
+	
+	var grid_selector  = "#cache_grid-table";
+	var pager_selector = "#cache_grid-pager";
+
+	var colNames;
+	var  cacheGrid = null;
+	$.loy.i18n([serviceContext+'/i18n/data/cache'],$.homeGlobal.LANG,$container,{custCallback:function(){
+		colNames =[' ',
+			 $.i18n.prop("com.loy.e.basic.data.cache.name"),
+			 $.i18n.prop("com.loy.e.basic.data.cache.info")
+		];
+		createCacheGrid();
+	}});
+	
+
+	function  createCacheGrid(){
+		var formatoptions = getFormatoptions(serviceContext+'/cache/','cache');
+		formatoptions.editbutton = false;
+		formatoptions.editformbutton = false;
+		formatoptions.delbutton = false;
+		cacheGrid =jQuery(grid_selector).loyGrid({
+			url: serviceContext+'/cache/page',
+			datatype: "json",
+			mtype: 'GET',
+			colNames:colNames,
+			colModel: [
+				{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false ,
+					formatter:'actions', 
+					formatoptions:formatoptions
+				},
+		   		{ name: 'name', index: 'name',sortable:false, width: 100, align: "left", editable: false}, 
+				{ name: 'info', index: 'info',sortable:false, width: 500, align: "left", editable: false} 
+		   		
+			],
+			pager: pager_selector,
+			//width:$(".page-content").width(),
+			//height: '310',
+			loadComplete:function(data){
+				loadComplete(data);
+				var list = data.data?data.data.content:null;
+				if(list){
+					for(var i=0;i<list.length;i++){
+						var jCancelDivId = "jCancelButton_"+list[i].id;
+						var $clean = $('<div title="'+$.i18n.prop("com.loy.e.basic.data.cache.clear")+'"  id="'+list[i].id+'"  style="float:left;margin-left:5px;" class="ui-pg-div ui-inline-del"  onmouseover="jQuery(this).addClass(\'ui-state-hover\');" onmouseout="jQuery(this).removeClass(\'ui-state-hover\');"  data-original-title="所选记录"><span class="ui-icon  fa-paint-brush"></span></div>');
+						$clean.on('click',function(){
+							clean($(this).attr('id'));
+						});
+						if(hasPermissionByCode('cache:clean')){
+							$('#'+jCancelDivId,cacheGrid).parent().append($clean);
+						}
+					}	
+				}	
+			}
+		}).loyGrid('navGrid','#cache_grid-pager',{
+			"baseUrl":serviceContext+"/cache/",
+			accessCodePrefix:'cache',
+			view: false,
+			add:false,
+			edit:false,
+			del:false
+		});
+		cacheGrid.jqGrid('setFrozenColumns');
+	}
+	function clean(name){
+		$.loy.ajax({
+			url:serviceContext+"/cache/clear",
+			showSuccess:true,
+			data:{"name":name},
+			success:function(data){
+				if(data.success){
+					cacheGrid.trigger("reloadGrid");
+				}
+			}
+		});
+	}
+});
+/*]]>*/
+</script>
